@@ -7,12 +7,18 @@ import { UserService } from './user.service';
   templateUrl: 'title.component.html',
 })
 export class TitleComponent {
-    @Input() subtitle = '';
-    title = 'Angular Modules';
+  @Input() subtitle = '';
+  title = 'Angular Modules';
+  user = '';
 
-    user:string = '';
-
-    constructor(userService: UserService){
-        this.user = userService.userName;
-    }
+  constructor(userService: UserService) {
+    this.user = userService.userName;
+  }
 }
+
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

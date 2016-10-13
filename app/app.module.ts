@@ -1,29 +1,31 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule }           from '@angular/core';
+import { BrowserModule }      from '@angular/platform-browser';
 
-/** App Root */
-import { AppComponent }  from './app.component';
-import { TitleComponent }  from './title.component';
-import { HighlightDirective } from './highlightDirective'
-import { UserService } from './user.service';
+/* App Root */
+import { AppComponent }       from './app.component';
+import { HighlightDirective } from './highlight.directive';
+import { TitleComponent }     from './title.component';
+import { UserService }        from './user.service';
 
-/* Contact Imports */
+/* Feature Modules */
 import { ContactModule }      from './contact/contact.module';
+import { routing }            from './app.routing';
 
 @NgModule({
-  imports: [ 
-      BrowserModule,
-      ContactModule
-   ],
-  declarations: [
-       AppComponent,
-       TitleComponent,
-       HighlightDirective
-   ],
-   providers:[ 
-       UserService
-   ],
+  imports:      [
+    BrowserModule,
+    ContactModule,
+    routing
+  ],
+  providers:    [ UserService ],
+  declarations: [ AppComponent, HighlightDirective, TitleComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
+
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

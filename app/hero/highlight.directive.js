@@ -9,16 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+// Same directive name and selector as
+// HighlightDirective in parent AppRootModule
+// It selects for both input boxes and  'highlight' attr
+// and it highlights in beige instead of yellow
 var HighlightDirective = (function () {
     function HighlightDirective(renderer, el) {
-        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'powderblue');
-        console.log("* Contact highlight called for " + el.nativeElement.tagName);
+        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'beige');
+        console.log("* Hero highlight called for " + el.nativeElement.tagName);
     }
     HighlightDirective = __decorate([
-        core_1.Directive({ selector: '[highlight], input' }), 
+        core_1.Directive({ selector: '[highlight]' }), 
         __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
     ], HighlightDirective);
     return HighlightDirective;
 }());
 exports.HighlightDirective = HighlightDirective;
-//# sourceMappingURL=hightlight.directive.js.map
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/ 
+//# sourceMappingURL=highlight.directive.js.map

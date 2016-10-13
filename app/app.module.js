@@ -10,13 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-/** App Root */
+/* App Root */
 var app_component_1 = require('./app.component');
+var highlight_directive_1 = require('./highlight.directive');
 var title_component_1 = require('./title.component');
-var highlightDirective_1 = require('./highlightDirective');
 var user_service_1 = require('./user.service');
-/* Contact Imports */
+/* Feature Modules */
 var contact_module_1 = require('./contact/contact.module');
+var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,16 +25,11 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                contact_module_1.ContactModule
+                contact_module_1.ContactModule,
+                app_routing_1.routing
             ],
-            declarations: [
-                app_component_1.AppComponent,
-                title_component_1.TitleComponent,
-                highlightDirective_1.HighlightDirective
-            ],
-            providers: [
-                user_service_1.UserService
-            ],
+            providers: [user_service_1.UserService],
+            declarations: [app_component_1.AppComponent, highlight_directive_1.HighlightDirective, title_component_1.TitleComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
@@ -41,4 +37,9 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/ 
 //# sourceMappingURL=app.module.js.map

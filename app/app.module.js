@@ -12,12 +12,11 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 /* App Root */
 var app_component_1 = require('./app.component');
-var highlight_directive_1 = require('./highlight.directive');
-var title_component_1 = require('./title.component');
-var user_service_1 = require('./user.service');
 /* Feature Modules */
 var contact_module_1 = require('./contact/contact.module');
 var app_routing_1 = require('./app.routing');
+var core_module_1 = require('./core/core.module');
+var shared_module_1 = require('./shared/shared.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,10 +25,11 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 contact_module_1.ContactModule,
+                core_module_1.CoreModule.forRoot({ userName: 'Miss Marple' }),
+                shared_module_1.SharedModule,
                 app_routing_1.routing
             ],
-            providers: [user_service_1.UserService],
-            declarations: [app_component_1.AppComponent, highlight_directive_1.HighlightDirective, title_component_1.TitleComponent],
+            declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

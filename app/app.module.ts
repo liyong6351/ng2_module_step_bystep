@@ -3,22 +3,23 @@ import { BrowserModule }      from '@angular/platform-browser';
 
 /* App Root */
 import { AppComponent }       from './app.component';
-import { HighlightDirective } from './highlight.directive';
-import { TitleComponent }     from './title.component';
-import { UserService }        from './user.service';
 
 /* Feature Modules */
 import { ContactModule }      from './contact/contact.module';
 import { routing }            from './app.routing';
 
+import { CoreModule }      from './core/core.module';
+import { SharedModule }      from './shared/shared.module';
+
 @NgModule({
   imports:      [
     BrowserModule,
     ContactModule,
+     CoreModule.forRoot({userName: 'Miss Marple'}),
+    SharedModule,
     routing
   ],
-  providers:    [ UserService ],
-  declarations: [ AppComponent, HighlightDirective, TitleComponent ],
+  declarations: [ AppComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

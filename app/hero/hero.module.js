@@ -14,7 +14,6 @@ var forms_1 = require('@angular/forms');
 var hero_component_1 = require('./hero.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_list_component_1 = require('./hero-list.component');
-var highlight_directive_1 = require('./highlight.directive');
 var hero_routing_1 = require('./hero.routing');
 var HeroModule = (function () {
     function HeroModule() {
@@ -23,8 +22,7 @@ var HeroModule = (function () {
         core_1.NgModule({
             imports: [common_1.CommonModule, forms_1.FormsModule, hero_routing_1.routing],
             declarations: [
-                hero_component_1.HeroComponent, hero_detail_component_1.HeroDetailComponent, hero_list_component_1.HeroListComponent,
-                highlight_directive_1.HighlightDirective
+                hero_component_1.HeroComponent, hero_detail_component_1.HeroDetailComponent, hero_list_component_1.HeroListComponent
             ]
         }), 
         __metadata('design:paramtypes', [])
